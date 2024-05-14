@@ -50,7 +50,7 @@ class BuildColor {
   ///```dart
   ///return Theme.of(context).bottomAppBarColor
   ///```
-  Color get bottomAppBar => Theme.of(_context).bottomAppBarColor;
+  Color get bottomAppBar => Theme.of(_context).bottomAppBarTheme.color!;
 
   ///```dart
   ///return Theme.of(context).cardColor
@@ -85,7 +85,6 @@ class BuildColor {
   ///```dart
   ///return Theme.of(context).selectedRowColor
   ///```
-  Color get selectedRow => Theme.of(_context).selectedRowColor;
 
   ///```dart
   ///return Theme.of(context).unselectedWidgetColor
@@ -106,7 +105,9 @@ class BuildColor {
     'https://flutter.dev/docs/release/breaking-changes/theme-data-accent-properties#migration-guide. '
     'This feature was deprecated after v2.3.0-0.1.pre.',
   )
-  Color get button => Theme.of(_context).buttonTheme.colorScheme?.secondary ?? Theme.of(_context).colorScheme.secondary;
+  Color get button =>
+      Theme.of(_context).buttonTheme.colorScheme?.secondary ??
+      Theme.of(_context).colorScheme.secondary;
 
   ///```dart
   ///return Theme.of(context).secondaryHeaderColor
@@ -116,7 +117,7 @@ class BuildColor {
   ///```dart
   ///return Theme.of(context).backgroundColor
   ///```
-  Color get background => Theme.of(_context).backgroundColor;
+  Color get background => Theme.of(_context).colorScheme.surface;
 
   ///```dart
   ///return Theme.of(context).dialogBackgroundColor
@@ -136,10 +137,9 @@ class BuildColor {
   ///```dart
   ///return Theme.of(context).errorColor
   ///```
-  Color get error => Theme.of(_context).errorColor;
+  Color get error => Theme.of(_context).colorScheme.error;
 
   ///```dart
   ///return Theme.of(context).toggleableActiveColor
   ///```
-  Color get toggleableActive => Theme.of(_context).toggleableActiveColor;
 }
